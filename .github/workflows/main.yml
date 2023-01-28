@@ -34,7 +34,7 @@ jobs:
     
 
     - name: Azure Login
-      uses: Azure/login@v1.4.3
+      uses: Azure/login@v1
       with:
            creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Deploy bicep to Azure
