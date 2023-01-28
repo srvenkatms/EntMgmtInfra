@@ -1,3 +1,4 @@
+targetScope = 'resourceGroup'
 @description('The name of the Managed Cluster resource.')
 param clusterName string = 'aks101cluster'
 
