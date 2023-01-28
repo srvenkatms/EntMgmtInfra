@@ -1,7 +1,7 @@
 targetScope = 'subscription'
-param name string = resourceGroup().name
-param location string = resourceGroup().location
-param resourcePrefix string = 'EntProj'
+param name string = 'entproj-us'
+param location string = 'eastus'
+param resourcePrefix string = 'entproj'
 
 param resourceGroupName string = '$(resourcePrefix)-rg'
 
