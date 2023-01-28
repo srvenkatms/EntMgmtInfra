@@ -18,7 +18,7 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: c3d8fe47-5458-4f04-ab24-8dc3367ebf01 #${{ secrets.AZURE_SUBSCRIPTION }}
- 
+        resourceGroupName: EntProj-rg
         template: ./aksdeployment.bicep
         parameters: 'location=eastus resourcePrefix=EntProj'
         failOnStdErr: false
