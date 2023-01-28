@@ -12,7 +12,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 
 module aks './aks-cluster.bicep' = {
   name: '${resourcePrefix}cluster'
-  scope: resourceGroup().name
+  scope: rg
   params: {
     location: location
     clusterName: resourcePrefix
