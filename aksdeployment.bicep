@@ -1,4 +1,4 @@
-#targetScope = 'subscription'
+targetScope = 'subscription'
 param location string = 'eastus'
 param resourcePrefix string = 'EntProj'
 
@@ -11,7 +11,7 @@ resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
 
 module aks './aks-cluster.bicep' = {
   name: '${resourcePrefix}cluster'
-  scope: rg
+  scope: resourceGroup
   params: {
     location: location
     clusterName: resourcePrefix
