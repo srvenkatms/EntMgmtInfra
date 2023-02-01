@@ -3,6 +3,7 @@ param location string = 'eastus'
 param resourcePrefix string = 'EntProj'
 
 param resourceGroupName string = '${resourcePrefix}-rg'
+param acrName string = '${resourcePrefix}acr'
 
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name : resourceGroupName
@@ -13,7 +14,7 @@ module acr './acr-aks.bicep' = {
   scope: rg
   params: {
     location: location
-    acrName: '${resourcePrefix}acr'
+    acrName: acrName
   }
 }
 module aks './aks-cluster.bicep' = {
