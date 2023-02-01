@@ -58,5 +58,5 @@ jobs:
           az deployment sub create \
           --template-file ${{  env.bicepfilePath }} \
           --location ${{  env.resourceGroupLocation }} \
-          --parameters "{\"acrName\": {\"value\": \"${{ env.resourceGroupName }}acr\"}
+          --parameters "{\"acrName\": {\"value\": \"${{ env.resourceGroupName }}acr\"}}"
     
