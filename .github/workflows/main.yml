@@ -48,7 +48,7 @@ jobs:
           az group create \
           --name ${{ env.resourceGroupName }} \
           --location ${{ env.resourceGroupLocation }}
-          az group create --name myContainerRegRG --location centralus
+        
           
 
     - name: Deploy aks bicep to Azure
@@ -58,5 +58,5 @@ jobs:
           az deployment sub create \
           --template-file ${{  env.bicepfilePath }} \
           --location ${{  env.resourceGroupLocation }}
-           --parameters acrName entapiacr
+          --parameters "{\"acrName\": {\"value\": \"${{ env.resourceGroupName }}acr\"}
     
