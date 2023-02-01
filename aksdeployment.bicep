@@ -13,7 +13,7 @@ module acr './acr-aks.bicep' = {
   scope: rg
   params: {
     location: location
-    acrName: '$(name)'
+    acrName: '${resourcePrefix}acr'
   }
 }
 module aks './aks-cluster.bicep' = {
