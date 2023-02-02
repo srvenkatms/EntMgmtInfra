@@ -1,5 +1,9 @@
 @minLength(5)
 @maxLength(50)
+@allowed([
+  'new'
+  'existing'
+])
 @description('Provide a globally unique name of your Azure Container Registry')
 param acrName string = 'acr${uniqueString(resourceGroup().id)}'
 
@@ -8,8 +12,8 @@ param location string = resourceGroup().location
 
 @description('Provide a tier of your Azure Container Registry.')
 param acrSku string = 'Basic'
-
-resource acrResource 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = {
+param acrNewOrExisting string = 'existing'
+resource acrResource 'Microsoft.ContainerRegistry/registries@2021-06-01-preview' = if (acrNewOrExisting == 'new'){
   name: acrName
   location: location
   sku: {
